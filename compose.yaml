@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=stacs'
+      - 'POSTGRES_PASSWORD=17'
+      - 'POSTGRES_USER=user'
+    ports:
+      - '5432:5432'
+    volumes:
+      - './dbInit:/docker-entrypoint-initdb.d'
